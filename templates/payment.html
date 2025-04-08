@@ -63,8 +63,10 @@
         var socket = io.connect('{{host}}');
         socket.on('connect', function(){
           console.log("WebSocket connected");
+        });
+        socket.on('payment-confirmed-{{payment_id}}', function(){
+          console.log("Confirmed payment");
         })
-
   </script>
   </body>
 </html>
